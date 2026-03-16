@@ -10,6 +10,10 @@ dotenv.config();
 
 const app = express();
 
+app.get("/", (req, res) => {
+  res.send("Platinum Edge Backend Running Successfully 🚀");
+});
+
 // Middleware
 app.use(cors());
 app.use(express.json());
