@@ -68,11 +68,13 @@ const transactionSchema = new mongoose.Schema({
 const Transaction = mongoose.model('Transaction', transactionSchema);
 
 // Email Transporter
-const transporter = nodemailer.createTransporter({
-  service: 'gmail',
+const nodemailer = require("nodemailer");
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
   auth: {
-    user: process.env.EMAIL_USER || 'itranslogisticltd@gmail.com',
-    pass: process.env.EMAIL_PASS || 'your-app-password'
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
   }
 });
 
