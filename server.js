@@ -19,11 +19,11 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB Connection
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://username:password@cluster.mongodb.net/platinum?retryWrites=true&w=majority';
+const MONGODB_URI = process.env.MONGO_URI;
 
 mongoose.connect(MONGODB_URI)
-  .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.error('MongoDB Error:', err));
+  .then(() => console.log("MongoDB Connected"))
+  .catch(err => console.error("MongoDB Error:", err));
 
 // User Schema
 const userSchema = new mongoose.Schema({
